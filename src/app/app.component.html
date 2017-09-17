@@ -1,3 +1,53 @@
+------------------------------------------------------------
+------------------------------------------------------------
+<p>{{name1 | uppercase}}</p>
+<p>{{name1 | lowercase}}</p>
+
+<h2>{{day}}</h2>
+<h2>{{day | date}}</h2>
+<h2>{{day | date:'shortDate'}}</h2>
+<h2>{{day | date:'fullDate'}}</h2>
+<h2>{{day | date:'fullDate' | uppercase}}</h2>
+
+<p>{{arr1 | sort:'ascending'}}</p>
+<p>{{arr1 | sort:'descending'}}</p>
+------------------------------------------------------------
+<div class="main learn2">
+    <h1>Item's List</h1>
+    <div class="addItem">
+        <input [(ngModel)] = "newItem" placeholder="Add item" class="addText">
+        <button (click) = "pushItem()" >Add</button>
+    </div>
+    <ul>
+        <li *ngFor="let i of items; let ind = index">
+            {{i}}
+            <span (click) = "removeItem(ind)">x</span>
+        </li>
+    </ul>
+</div>
+
+------------------------------------------------------------
 <h1>
   {{title}}
 </h1>
+
+<a routerLink="/member">Member</a>
+<a routerLink="/product">Product</a><br><br>
+{{obj.name}}<br><br>
+{{arr[0]}}<br>  
+{{arr[1]}}<br>
+{{arr[2]}}
+<br><br>
+<ul>
+    <li *ngFor = "let i of arr">{{i}}</li>
+</ul>
+<p *ngIf = "isTru">Hello</p>
+<p *ngIf = "isTru else firstTemp">Hello</p>
+<ng-template #firstTemp>This is first template</ng-template>
+<p *ngIf = "myName == 'Sunil' && true">True</p>
+
+<p *ngIf = "isTru; then secondTemp else thirdTemp">Hello</p>
+<ng-template #secondTemp>This is second template</ng-template>
+<ng-template #thirdTemp>This is third template</ng-template>
+
+<router-outlet></router-outlet>
